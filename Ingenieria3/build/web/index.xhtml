@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"      
+      xmlns:h="http://java.sun.com/jsf/html">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Ingenieria 3</title>
+    
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
+    
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+  
+<h:body>
+    <br />
+    <h:form>
+        <h:commandButton action="#{helloWorld.setMessage('Texto 1')}"/>
+        #{helloWorld.message}
+     
+    </h:form>
+    
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel panel-danger">
+                    <div class="panel-heading">Panel heading without title</div>
+                    <div class="panel-body">
+                         #{helloWorld.message}
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Panel heading without title</div>
+                    <div class="panel-body">
+                        Panel content
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="panel panel-success">
+                    <div class="panel-heading">Panel heading without title</div>
+                    <div class="panel-body">
+                        Panel content
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="panel panel-warning">
+                    <div class="panel-heading">Panel heading without title</div>
+                    <div class="panel-body">
+                        Panel content
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <button class="btn btn-danger" id="btnOcultarRojos">Ocultar Rojos</button>
+                <button class="btn btn-default btn-mostrar-paneles">Mostrar todos</button>
+                <button class="btn btn-info" data-efecto="fadein" data-objetivo=".panel-success">Animar</button>
+                
+                
+                
+            </div>
+        </div>
+    </div>
+
+    <script src="Scripts/jquery-1.9.1.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    
+
+    <script>
+        $("#btnOcultarRojos").click(function () {
+            $(".panel-danger").addClass("hidden");
+        });
+
+        $(".btn-mostrar-paneles").click(function () {
+            $(".panel-danger").removeClass("hidden");
+        });
+
+        $('[data-efecto="fadein"]').click(function () {
+            $(objetivo).css("display", "none");
+            var objetivo = $(this).data("objetivo");
+
+            if ($(objetivo).is(":hidden")) {
+                $(objetivo).show("slow");
+            } else {
+                $(objetivo).slideUp();
+            }
+        });
+    </script>
+    
+    
+    	
+    </h:body>
+    
+</html>
