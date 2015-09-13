@@ -3,7 +3,8 @@
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:f="http://java.sun.com/jsf/core"      
-      xmlns:h="http://java.sun.com/jsf/html">
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
     <head>
         <meta charset="utf-8"/>
         <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -62,6 +63,11 @@
                 <div class="row">
                     <div class="col-md-12">
                         <h1>Ajax</h1>
+                        <code>
+                            $.getJSON("webservice.json", null, function (data){$("#lbl1").text(data.texto);});
+                        </code>
+                        <br/>
+                        <br/>
                         <h:commandButton styleClass="btn btn-default" value="Sin ajax" action="#{helloWorld.setMessage('Texto 1')}"></h:commandButton>
                         <span id="btnAjax" class=" btn btn-default">Con ajax</span>
                         <label id="lbl1">#{helloWorld.message}</label>
@@ -69,8 +75,58 @@
                 </div>
 
                 <div class="row">
+                    <div class="col-md-12">
+                        <h1>Selectores</h1>
+
+                        <h2>Tipos</h2>
+                        <label class="label label-default">.clase</label>
+                        <label class="label label-default">#identificador</label>
+                        <label class="label label-default">control</label>
+
+                        <h2>Ejemplo</h2>
+                        <code>
+                            $('.label-danger').addClass('hidden');
+                        </code>
+                        <br/>
+                        <br/>
+
+                        <span class="btn btn-danger" onclick="$('.label-danger').addClass('hidden')">Ocultar rojos</span>
+                        <span class="btn btn-info" onclick="$('.label-info').addClass('hidden')">Ocultar azules</span>
+                        <span class="btn btn-warning" onclick="$('.label-warning').addClass('hidden')">Ocultar amarillos</span>
+                        <span class="btn btn-default" onclick="$('.label').removeClass('hidden')">Restaurar</span>
+                        <div>
+                            <label class="label label-danger">.label-danger</label>
+                            <label class="label label-danger">.label-danger</label>
+                            <label class="label label-danger">.label-danger</label>
+                            <label class="label label-danger">.label-danger</label>
+                            <label class="label label-danger">.label-danger</label>
+                            <label class="label label-danger">.label-danger</label>
+                            <br/>
+                            <label class="label label-info">.label-info</label>
+                            <label class="label label-info">.label-info</label>
+                            <label class="label label-info">.label-info</label>
+                            <label class="label label-info">.label-info</label>
+                            <label class="label label-info">.label-info</label>
+                            <label class="label label-info">.label-info</label>
+                            <br/>
+                            <label class="label label-warning">.label-warning</label>
+                            <label class="label label-warning">.label-warning</label>
+                            <label class="label label-warning">.label-warning</label>
+                            <label class="label label-warning">.label-warning</label>
+                            <label class="label label-warning">.label-warning</label>
+                            <label class="label label-warning">.label-warning</label>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1>Animaciones</h1>
+                    </div>
                     <div class="col-md-6">
-                        <div class="panel panel-danger">
+
+                        <div class="panel panel-danger" data-efecto="fadein">
                             <div class="panel-heading">Panel heading without title</div>
                             <div class="panel-body">
                                 #{helloWorld.message}
@@ -78,7 +134,7 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <div class="panel panel-default">
+                        <div class="panel panel-default" data-efecto="fadein">
                             <div class="panel-heading">Panel heading without title</div>
                             <div class="panel-body">
                                 Panel content
@@ -86,7 +142,7 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <div class="panel panel-success">
+                        <div class="panel panel-success" data-efecto="fadein">
                             <div class="panel-heading">Panel heading without title</div>
                             <div class="panel-body">
                                 Panel content
@@ -94,7 +150,7 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <div class="panel panel-warning">
+                        <div class="panel panel-warning" data-efecto="fadein">
                             <div class="panel-heading">Panel heading without title</div>
                             <div class="panel-body">
                                 Panel content
@@ -105,13 +161,7 @@
 
                 <div class="row">
                     <div class="col-md-12">
-                        <span class="btn btn-danger" id="btnOcultarRojos">Ocultar Rojos</span>
-                        <span class="btn btn-default btn-mostrar-paneles">Mostrar todos</span>
-                        <span class="btn btn-info" data-efecto="fadein" data-objetivo=".panel-success">Animar</span>
-
-                        
-
-
+                        <span class="btn btn-info" data-aplicar-efecto="fadein" data-objetivo="[data-efecto='fadein']">Animar</span>
                     </div>
                 </div>
             </div>
@@ -122,37 +172,34 @@
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    
+
 
 
     <script>
-        $("#btnOcultarRojos").click(function () {
-            $(".panel-danger").addClass("hidden");
-        });
+                            $("#btnOcultarRojos").click(function () {
+                                $(".panel-danger").addClass("hidden");
+                            });
 
-        $(".btn-mostrar-paneles").click(function () {
-            $(".panel-danger").removeClass("hidden");
-        });
+                            $(".btn-mostrar-paneles").click(function () {
+                                $(".panel-danger").removeClass("hidden");
+                            });
 
-        $('[data-efecto="fadein"]').click(function () {
-            $(objetivo).css("display", "none");
-            var objetivo = $(this).data("objetivo");
+                            $('[data-aplicar-efecto="fadein"]').click(function () {
+                                var objetivo = $(this).data("objetivo");
 
-            if ($(objetivo).is(":hidden")) {
-                $(objetivo).show("slow");
-            } else {
-                $(objetivo).slideUp();
-            }
-        });
-        
-        $('#btnAjax').click(function(){
-           $.getJSON("webservice.json", null, function (data){
-            $("#lbl1").text(data.texto);});
-        }); 
+                                $(objetivo).each(function () {
+                                    if ($(this).is(":hidden")) {
+                                        $(this).show("slow");
+                                    } else {
+                                        $(this).slideUp();
+                                    }
+                                });
+                            });
+
+                            $('#btnAjax').click(function () {
+                                $.getJSON("webservice.json", null, function (data) {
+                                    $("#lbl1").text(data.texto);
+                                });
+                            });
     </script>
-
-
-
-
-
 </html>
