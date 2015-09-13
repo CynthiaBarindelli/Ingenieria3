@@ -14,6 +14,8 @@
 
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"/>
 
 
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -38,21 +40,20 @@
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">Home</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Contact</a></li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">jQuery <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="#">Action</a></li>
-                                <li><a href="#">Another action</a></li>
-                                <li><a href="#">Something else here</a></li>
-                                <li role="separator" class="divider"></li>
-                                <li class="dropdown-header">Nav header</li>
-                                <li><a href="#">Separated link</a></li>
-                                <li><a href="#">One more separated link</a></li>
+                                <li><a href="#ajaxSection">Ajax</a></li>
+                                <li><a href="#selectoresSection">Selectores</a></li>
+                                <li><a href="#animacionesSection">Animaciones</a></li>
+                                <li><a href="#eventosSection">Eventos</a></li>
+                                <li><a href="#funcionesSection">Funciones útiles</a></li>
+
                             </ul>
                         </li>
+                        
+                        <li><a href="#bootstrapSection">Bootstrap</a></li>
+                        
                     </ul>
                 </div><!--/.nav-collapse -->
             </div><!--/.container-fluid -->
@@ -62,7 +63,8 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-12">
-                        <h1>Ajax</h1>
+                        <h1 id="jquerySection">jQuery</h1>
+                        <h2>Ajax</h2>
                         <code>
                             $.getJSON("webservice.json", null, function (data){$("#lbl1").text(data.texto);});
                         </code>
@@ -76,14 +78,14 @@
 
                 <div class="row">
                     <div class="col-md-12">
-                        <h1>Selectores</h1>
+                        <h2 id='selectoresSection'>Selectores</h2>
 
-                        <h2>Tipos</h2>
+                        <h3>Tipos</h3>
                         <label class="label label-default">.clase</label>
                         <label class="label label-default">#identificador</label>
                         <label class="label label-default">control</label>
 
-                        <h2>Ejemplo</h2>
+                        <h3>Ejemplo</h3>
                         <code>
                             $('.label-danger').addClass('hidden');
                         </code>
@@ -122,8 +124,8 @@
 
                 <div class="row">
                     <div class="col-md-12">
-                        <h1>Animaciones <span class="btn btn-info btn-small" data-aplicar-efecto="fadein" data-objetivo="[data-efecto='fadein']">Animar</span>
-                        </h1>
+                        <h2 id='animacionesSection'>Animaciones <span class="btn btn-info btn-small" data-aplicar-efecto="fadein" data-objetivo="[data-efecto='fadein']">Animar</span>
+                        </h2>
                     </div>
                     <div class="col-md-6">
 
