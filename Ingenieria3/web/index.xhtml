@@ -194,6 +194,11 @@
                                
                              
                          <h3>Data</h3>
+                         <button type="button" class="btn btn-warning btn-show-alert" data-alert-class="alert alert-warning">Warning</button>
+                         <button type="button" class="btn btn-danger btn-show-alert" data-alert-class="alert alert-danger">Danger</button>
+                         <button type="button" class="btn btn-success btn-show-alert" data-alert-class="alert alert-success">Success</button>
+                         <br/><br/>
+                         <div id="divAlerts"> </div>
                         <h3>Attr</h3>
                     </div>
                 </div>
@@ -253,6 +258,12 @@
                             
                             $( ".input-evt" ).focus(function() {
                                 $( this ).val("input on focus");
-                            });                                                         
+                            });    
+                            
+                            $(".btn-show-alert").click(function (){
+                               var alerttype = $(this).data("alert-class");
+                               var alert = '<div class="'+alerttype+'" role="alert"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><span class="sr-only">Error:</span> Enter a valid email address</div>';
+                                $("#divAlerts").append(alert);
+                            });
     </script>
 </html>
