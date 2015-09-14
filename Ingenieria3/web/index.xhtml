@@ -166,6 +166,22 @@
                 <div class="row">
                     <div class="col-md-12">
                         <h2 id='eventosSection'>Eventos </h2>
+                        <ul class="list-group">
+                            <li class="list-group-item li-hover">Elem 1</li>
+                            <li class="list-group-item li-hover">Elem 2</li>
+                            <li class="list-group-item li-hover li-fade">Elem 3</li>
+                            <li class="list-group-item li-hover li-fade">Elem 4</li>
+                        </ul>
+                        <br/>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email address</label>
+                            <input type="email" class="form-control input-evt" id="exampleInputEmail1" placeholder="Email"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Password</label>
+                            <input type="password" class="form-control input-evt" id="exampleInputPassword1" placeholder="Password"/>
+                        </div>
+ 
                     </div>
                 </div>
                 
@@ -223,8 +239,20 @@
                                      $('#CambiarColor').css('color', 'green');; 
 
                             }); 
+                            
+                             $('.li-hover').hover(function() {
+                                $( this ).append( $( "<span> li hover event</span>" ) );
+                             }, function() {
+                                $( this ).find( "span:last" ).remove();
+                             }); 
                              
-                                    
-                                                           
+                             $( ".li-fade" ).hover(function() {
+                                $( this ).fadeOut( 100 );
+                                $( this ).fadeIn( 500 );
+                            });
+                            
+                            $( ".input-evt" ).focus(function() {
+                                $( this ).val("input on focus");
+                            });                                                         
     </script>
 </html>
