@@ -173,7 +173,11 @@
                     <div class="col-md-12">
                         <h2 id='funcionesSection'>Funciones útiles</h2>
                         <h3>CSS</h3>
-                        <h3>Data</h3>
+                             <h4 id = 'CambiarColor'>Texto cambiar color </h4> 
+                                <button type="button" id='BotonColor' class="btn btn-info"> Cambiar color  </button> 
+                               
+                             
+                         <h3>Data</h3>
                         <h3>Attr</h3>
                     </div>
                 </div>
@@ -214,5 +218,13 @@
                                     $("#lbl1").text(data.texto);
                                 });
                             });
+                            
+                            $('#BotonColor').click(function() {
+                                     $('#CambiarColor').css('color', 'green');; 
+
+                            }); 
+                             
+                                    
+                                                           
     </script>
 </html>
