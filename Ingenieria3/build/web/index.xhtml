@@ -200,6 +200,11 @@
                          <br/><br/>
                          <div id="divAlerts"> </div>
                         <h3>Attr</h3>
+                        <button type="button" class="btn btn-warning btn-show-alert2" data-alert-class="alert alert-warning">Warning</button>
+                         <button type="button" class="btn btn-danger btn-show-alert2" data-alert-class="alert alert-danger">Danger</button>
+                         <button type="button" class="btn btn-success btn-show-alert2" data-alert-class="alert alert-success">Success</button>
+                         <br/><br/>
+                         <div id="divAlerts2"> </div>
                     </div>
                 </div>
             </div>
@@ -264,6 +269,12 @@
                                var alerttype = $(this).data("alert-class");
                                var alert = '<div class="'+alerttype+'" role="alert"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><span class="sr-only">Error:</span> Enter a valid email address</div>';
                                 $("#divAlerts").append(alert);
+                            });
+                            
+                            $(".btn-show-alert2").click(function (){
+                               var alerttype = $(this).attr("data-alert-class");
+                               var alert = '<div class="'+alerttype+'" role="alert"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><span class="sr-only">Error:</span> Enter a valid email address</div>';
+                                $("#divAlerts2").append(alert);
                             });
     </script>
 </html>
