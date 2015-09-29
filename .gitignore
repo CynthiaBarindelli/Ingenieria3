@@ -1,4 +1,4 @@
-# Created by https://www.gitignore.io/api/netbeans,java
+﻿# Created by https://www.gitignore.io/api/netbeans,java
 
 ### NetBeans ###
 nbproject/private/
@@ -9,7 +9,6 @@ nbdist/
 nbactions.xml
 nb-configuration.xml
 .nb-gradle/
-
 
 ### Java ###
 *.class
