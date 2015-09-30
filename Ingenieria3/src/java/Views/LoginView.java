@@ -24,9 +24,13 @@ public class LoginView implements Serializable{
     private UserSessionBean userSessionBean;
     private String username;
     private String password;
-    public void IniciarSesion(){
-        if(UsersController.ValidateUserPassword(username, password))
+    public String IniciarSesion(){
+                
+        if(UsersController.ValidateUserPassword(username, password)){
             userSessionBean.Login();
+            return "/index.xhtml";
+        }
+        return "";
     }
     
     public void setUserSessionBean(UserSessionBean userSessionBean) {

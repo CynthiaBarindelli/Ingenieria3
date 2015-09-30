@@ -11,6 +11,6 @@ package Controllers;
  */
 public class UsersController {
     public static boolean ValidateUserPassword(String user, String password){
-        return user.equals("usuario") && password.equals("123456");
+        return user.equals("usuario@user.com") && password.equals("123456");
     }
 }
